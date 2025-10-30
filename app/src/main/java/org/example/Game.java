@@ -5,12 +5,13 @@ public class Game {
     public Board board;
     public String currentPlayer;
 
-    public Game() {
+    public Game(String starter) {
         board = new Board();
-        currentPlayer = "X";
+        currentPlayer = starter;
     }
 
-    public void playGame() {
+
+    public String playGame() {
         int moves = 0;
         boolean gameWon = false;
 
@@ -23,14 +24,18 @@ public class Game {
             if (checkWinner()) {
                 board.printBoard();
                 System.out.println("Player " + currentPlayer + " wins!");
-                gameWon = true;
+                return currentPlayer;
             } else if (moves == 9) {
                 board.printBoard();
                 System.out.println("It's a draw!");
+                return "Tie";
             } else {
                 currentPlayer = currentPlayer.equals("X") ? "O" : "X";
             }
+
         }
+
+        return "Tie";
     }
 
     public boolean checkWinner() {

@@ -7,7 +7,7 @@ public class GameTest {
 
     @Test
     public void testCheckWinnerRow() {
-        Game game = new Game();
+        Game game = new Game("X");
 
         game.board.setCell(0, "X");
         game.board.setCell(1, "X");
@@ -18,9 +18,8 @@ public class GameTest {
 
     @Test
     public void testCheckWinnerColumn() {
-        Game game = new Game();
+        Game game = new Game("O");
 
-        game.currentPlayer = "O";
         game.board.setCell(0, "O");
         game.board.setCell(3, "O");
         game.board.setCell(6, "O");
@@ -30,7 +29,7 @@ public class GameTest {
 
     @Test
     public void testCheckWinnerDiagonal() {
-        Game game = new Game();
+        Game game = new Game("X");
 
         game.board.setCell(0, "X");
         game.board.setCell(4, "X");
@@ -41,7 +40,7 @@ public class GameTest {
 
     @Test
     public void testNoWinner() {
-        Game game = new Game();
+        Game game = new Game("X");
 
         game.board.setCell(0, "X");
         game.board.setCell(1, "O");
