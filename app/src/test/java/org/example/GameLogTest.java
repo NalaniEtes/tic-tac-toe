@@ -22,7 +22,7 @@ public class GameLogTest {
 
         log.saveToFile("test_log.txt");
 
-        File file = new file("test_log.txt");
+        File file = new File("test_log.txt");
         assertTrue(file.exists(), "File should be created");
 
         try {
